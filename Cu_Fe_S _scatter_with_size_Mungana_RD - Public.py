@@ -39,14 +39,13 @@ df_economic = df_clean[df_clean['Cu_pct'] > 1.0]
 CuFeS_mineral.to_csv(r"C:\Users\cesar\Documents\Mineral deposits PyTorch and Python\Mungana RD_report\files_unsup\scatter plot\merged_Cu_pct.csv", index=False)
 #Picked 1.0 Cu_pct as a typical threshold for economic grade
 CuFeS_mineral_filtered = CuFeS_mineral[
-    CuFeS_mineral['Cu_pct'] > 1.0
+    CuFeS_mineral['Cu_pct'] >= 1.0
 ]
-"""Setting As limit (in yellow under range_color parameter) to 2000 pppm since it is the level at which is considered safe
-thus the mineralised zone with As might present a significant processing risk.
-Choosing to display on 4D plot Fe_pct and Cu_pct. with As (penalty) in color
-and S content (data point size to identify sulphide vs oxide types)
+"""Setting As limit (in yellow under range_color parameter) to  < 2000 pppm. This is the level at which As concentration is considered safe,
+thus the mineralised zone with As > 2000 ppm might present a significant processing risk.
 
-to identify sulphide mineralisation vs. oxide mineralisation
+Choosing to display on 4D plot Fe_pct and Cu_pct. with As (penalty) in color
+and S content (data point size to identify sulphide vs oxide types) to identify sulphide mineralisation (High Cu, Fe, S) vs. oxide mineralisation (High Cu, Fe, low S).
 """
 diagram = px.scatter(
     CuFeS_mineral_filtered,
