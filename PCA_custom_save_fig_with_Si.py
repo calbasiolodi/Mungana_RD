@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import mpl_axes_aligner
 from sklearn.decomposition import PCA
 
-source_path: str = r"C:\Users\cesar\Documents\Mineral deposits PyTorch and Python\Mungana RD_report\RD 997 From scratch\custom\RD_997_clr_transformed_only_elements.csv"
+source_path: str = r"C:\Users...\RD_997_clr_transformed_only_elements.csv"
 
 df = pd.read_csv(source_path)
 
