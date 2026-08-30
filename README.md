@@ -10,4 +10,5 @@ Some data science studies to assess the Cu mineralisation at Mungana and Red Dom
 The PCA Biplot integrantedd with sklearn K-Means shows th eformation fo 4 differnt clusters of Cu mienralisations:
 Sulphide and Oxide mineralisations, that are subvided into As-poor and As-rich subtypes. 
 
-The cluster of iunterst given (Fig. ) shwoing discrete sulphides is cluster 2, which contains high-As but extremely high-grade Cu in the sulphide form.
+The cluster of interest given (Fig. ) showing discrete sulphides is cluster 2, which contains high-As but extremely high-grade Cu in the sulphide form.
+Other As-poor clusters are more self-explanatory and can be identified in other drill cores of the same deposit more easily by setting Cu, S, and As threshold values.
