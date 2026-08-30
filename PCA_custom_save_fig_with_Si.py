@@ -64,6 +64,6 @@ def biplot(dfScores: pd.DataFrame, dfLoadings: pd.DataFrame, exp_var: list = Non
 
 # 4. Plot
 biplot(dfScores, components_df, exp_var=pca.explained_variance_ratio_)
-plt.savefig(r"C:\Users\cesar\Documents\Mineral deposits PyTorch and Python\Mungana RD_report\RD 997 From scratch\custom\PCA_BP_cc_Si.png")
+plt.savefig(r"C:\Users\...\PCA_BP_cc_Si.png")
 plt.show()
 
