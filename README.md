@@ -6,8 +6,9 @@ The goal is to identify the different types of Cu mineralisation particularly in
 
 
 <img width="1520" height="809" alt="As_low" src="https://github.com/user-attachments/assets/20b7a0d0-89a6-4200-bca0-7bee709ba18f" />
+<figcaption><i>Figure 1: Datapoints (10 cm interval scan) containing less than 2000 ppm in As.</i></figcaption>
 <img width="1520" height="809" alt="As_high" src="https://github.com/user-attachments/assets/ab42100d-f899-4adb-b529-d15cb54eb3dd" />
-
+<figcaption><i>Datapoints (10 cm interval scan) containing more than 2000 ppm in As, thus might be unsafe to process.</i></figcaption>
 
 2. A PCA and PCA biplot (scikit-learn) is to be presented on the data points with Cu >= 1% (typical economic grade) to evaluate the control factor of high grade Cu / low As mineralisation. 
 
