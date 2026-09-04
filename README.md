@@ -14,10 +14,9 @@ The goal is to identify the different types of Cu mineralisation particularly in
 
 3. In the target dataset only the rows with Cu >=1 (or any other economically valuable grade) are chosen. This would avoid engineering additional rows with OneHotEncoder() or pandas.getdummies() that would introduce multicollinearity and overalap with the already present Cu_pct values. Removing Cu_pct values in favour of binarised dummies/encoders such as: 0 = (["Cu_pct"] <= 1) & 1 = (["Cu_pct"] >= 1), would distort CoDA significantly paritcualrly in datapoints where Cu is a main componens (e.g., 20%).
 
-4. There are also significant issues to raise with imputting below detection and not detected elements. Using MICE or LrEM by inserting the mean MDL without any tweak
-would introduce chemically impossible datapoints, whenthe MDL for a specific datapoint is missing, such as the instance of pure marble containing Fe contents in the order of miner (2 to 5%) that is not suported by imagery (no hue indicating Fe mienralisation).
+4. There are also significant issues to raise with imputting below detection and not detected elements. Using MICE or LrEM by inserting the mean MDL without any tweak would introduce chemically impossible datapoints, whenthe MDL for a specific datapoint is missing, such as the instance of pure marble containing Fe contents in the order of miner (2 to 5%) that is not supported by imagery (no hue indicating Fe mineralisation).
 
-5. The goal is not identify sef-explanatory mienralisation s(low As, High Cu, either ox. or sulph.) rather it is to identify and quantify the cluster that might contian discrete chalcopyrite (or any other pure Cu-bearing sulphide) despite high grade arsenic.
+5. The goal is not identify self-explanatory mienralisations (low As, High Cu, either ox. or sulph.), rather it is to identify and quantify the cluster that might contian discrete chalcopyrite (or any other pure Cu-bearing sulphide) despite high grade arsenic.
 
 The PCA Biplot integrantedd with sklearn K-Means shows th eformation fo 4 differnt clusters of Cu mienralisations:
 Sulphide and Oxide mineralisations, that are subvided into As-poor and As-rich subtypes. 
