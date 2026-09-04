@@ -4,6 +4,11 @@ The goal is to identify the different types of Cu mineralisation particularly in
 
 1. Here I present in file Cu_Fe_S.png the limitations of a standard Plotly 4D plot to assess the Cu mineralisation types "Cu vs Fe" with S and As represented by size and shade respectively. Nonetheless it can quickly illustrate the presence of Cu mineralisations with As well below the standards safety limit (2000 ppm) and high risk Cu mineralisations (oxide with high As) and ambiguous cases (high-grade Cu, S and As) that won't necessarily cluster together.
 
+
+<img width="1520" height="809" alt="As_low" src="https://github.com/user-attachments/assets/20b7a0d0-89a6-4200-bca0-7bee709ba18f" />
+<img width="1520" height="809" alt="As_high" src="https://github.com/user-attachments/assets/ab42100d-f899-4adb-b529-d15cb54eb3dd" />
+
+
 2. A PCA and PCA biplot (scikit-learn) is to be presented on the data points with Cu >= 1% (typical economic grade) to evaluate the control factor of high grade Cu / low As mineralisation. 
 
 3. In the target dataset only the rows with Cu >=1 (or any other economically valuable grade) are chosen. This would avoid engineering additional rows with OneHotEncoder() or pandas.getdummies() that would introduce multicollinearity and overalap with the already present Cu_pct values. Removing Cu_pct values in favour of binarised dummies/encoders such as: 0 = (["Cu_pct"] <= 1) & 1 = (["Cu_pct"] >= 1), would distort CoDA significantly paritcualrly in datapoints where Cu is a main componens (e.g., 20%).
