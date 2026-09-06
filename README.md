@@ -14,6 +14,9 @@ The goal is to identify the different types of Cu mineralisation particularly in
 
 3. In the target dataset only the rows with Cu >=1 (or any other economically valuable grade) are chosen. This would avoid engineering additional rows with OneHotEncoder() or pandas.getdummies() that would introduce multicollinearity and overalap with the already present Cu_pct values. Removing Cu_pct values in favour of binarised dummies/encoders such as: 0 = (["Cu_pct"] <= 1) & 1 = (["Cu_pct"] >= 1), would distort CoDA significantly paritcualrly in datapoints where Cu is a main componens (e.g., 20%).
 
+<img width="1440" height="768" alt="RD_997_Mineralisation_types" src="https://github.com/user-attachments/assets/fb1b172e-c78c-456a-98aa-eb0c56f1dd93" />
+<figcaption><i>Figure 3: the different types of Cu mineralisations in Red Dome 997 drill core. Only datapoints with Cu >= 1% were selected.</i></figcaption>
+
 4. There are also significant issues to raise with imputting below detection and not detected elements. Using MICE or LrEM by inserting the mean MDL without any tweak would introduce chemically impossible datapoints, whenthe MDL for a specific datapoint is missing, such as the instance of pure marble containing Fe contents in the order of miner (2 to 5%) that is not supported by imagery (no hue indicating Fe mineralisation).
 
 5. The goal is not identify self-explanatory mienralisations (low As, High Cu, either ox. or sulph.), rather it is to identify and quantify the cluster that might contian discrete chalcopyrite (or any other pure Cu-bearing sulphide) despite high grade arsenic.
