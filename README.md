@@ -1,6 +1,6 @@
 # Mungana_RD
 
-Data science case studies assessing Cu mineralisation at Mungana and Red Dome (Chillagoe, NE QLD) using public GSQ data.
+Geo-data science case study assessing Cu mineralisation at Mungana and Red Dome (Chillagoe, NE QLD) using public GSQ data.
 
 The goal is to distinguish different types of Cu mineralisation, particularly ambiguous cases where high-penalty elements (e.g., As) coexist with discrete "clean" Cu minerals such as chalcopyrite (Figures 1 and 2). These cases are hard to identify by simple thresholding, so this project applies machine learning to flag potentially valuable mineralised zones. Data were collected with a Minalyzer™ at a 10 cm sampling interval on drill cores 845 and 883 (Mungana) and 187 and 997 (Red Dome).
 
