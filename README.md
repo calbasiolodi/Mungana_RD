@@ -10,12 +10,20 @@ The goal is to identify the different types of Cu mineralisation particularly in
 <img width="1520" height="809" alt="As_high" src="https://github.com/user-attachments/assets/ab42100d-f899-4adb-b529-d15cb54eb3dd" />
 <figcaption><i>Figure 2: Datapoints (10 cm interval scan) containing more than 2000 ppm in As, thus might be unsafe to process.</i></figcaption>
 
-2. The main focus is drill core Red Dome 997, since it has the highest grade of Cu. Thus, A PCA and PCA biplot (scikit-learn) is to be presented on the data points with Cu >= 1% (typical economic grade) to evaluate the type of Cu mineralisation. 
+2. The main focus is drill core Red Dome 997, since it has the highest grade of Cu. Thus, A PCA and PCA biplot (scikit-learn) is to be presented on the data points with Cu >= 1% (typical economic grade) to evaluate the type of Cu mineralisation (Figure 3).
+
+
+
+<img width="981" height="1122" alt="JCU_29094_Lehrmann_2012_thesis" src="https://github.com/user-attachments/assets/cc563e35-4746-4c5e-86cd-38ac5bd5b0bd" />
+<figcaption><i>Figure 3: the Cu-bearing mineralisation in Mungana, the focus in on c), that contains both pure chalcopyrite and tennantite (tn) whihc is a Cu sulpharsenide. Thus providing evidence that clean chalcopyrite can be actually found in Mungana deposit. From Lehrmann (2012)</i></figcaption>
+
+<img width="1235" height="1412" alt="JCU_29094_Lehrmann_2012_thesis-RD_min_type" src="https://github.com/user-attachments/assets/bee9e508-5cde-4c30-95d9-66b42bed0bd1" />
+<figcaption><i>Figure 3: the Cu-bearing mineralisation in Red Dome, the focus in on c) and d). This mineralisaiton contains both pure chalcopyrite, discrete arsenopyrite (apy) that is Fe sulpharsenide, tennantite (tn) which is a Cu sulpharsenide. Thus providing evidence that clean chalcopyrite can be actually found in Mungana deposit. From Lehrmann (2012)</i></figcaption>
 
 3. In the target dataset only the rows with Cu >=1 (or any other economically valuable grade) are chosen. This would avoid engineering additional rows with OneHotEncoder() or pandas.getdummies() that would introduce multicollinearity and overalap with the already present Cu_pct values. Removing Cu_pct values in favour of binarised dummies/encoders such as: 0 = (["Cu_pct"] <= 1) & 1 = (["Cu_pct"] >= 1), would distort CoDA significantly paritcualrly in datapoints where Cu is a main componens (e.g., 20%).
 
 <img width="1440" height="768" alt="RD_997_Mineralisation_types" src="https://github.com/user-attachments/assets/fb1b172e-c78c-456a-98aa-eb0c56f1dd93" />
-<figcaption><i>Figure 3: the different types of Cu mineralisations in Red Dome 997 drill core. Only datapoints with Cu >= 1% were selected.</i></figcaption>
+<figcaption><i>Figure 5: a PCA biplot wiht the different types of Cu mineralisations in Red Dome 997 drill core. Only datapoints with Cu >= 1% were selected. Arsenic content is color coded (yellow = high As)</i></figcaption>
 
 4. There are also significant issues to raise with imputting below detection and not detected elements. Using MICE or LrEM by inserting the mean MDL without any tweak would introduce chemically impossible datapoints, whenthe MDL for a specific datapoint is missing, such as the instance of pure marble containing Fe contents in the order of miner (2 to 5%) that is not supported by imagery (no hue indicating Fe mineralisation).
 
