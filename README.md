@@ -26,7 +26,7 @@ The main focus is Red Dome drill core 997, which has the highest Cu grade. A PCA
 
 ## 3. Feature selection and CoDA considerations
 
-Only rows with Cu ≥ 1% (or another chosen economic threshold) are retained in the target dataset. This avoids engineering additional features via `OneHotEncoder()` or `pandas.get_dummies()`, which would introduce multicollinearity and overlap with the existing `Cu_pct` values. Replacing `Cu_pct` with a binarised encoding (0 for Cu_pct < 1%, 1 for Cu_pct ≥ 1%) would significantly distort the compositional data analysis (CoDA), particularly for data points where Cu is a major component (e.g., 20%).
+Only rows with Cu ≥ 1% (or another chosen economic threshold) are retained in the target dataset. This avoids engineering additional features via `OneHotEncoder()` or `pandas.get_dummies()`, (i.e., a category column saying Cu>=1 equals 0 or 1) which would introduce multicollinearity, and overlap with the existing `Cu_pct` values label. Hence, replacing `Cu_pct` with a binarised encoding (0 for Cu_pct < 1%, 1 for Cu_pct ≥ 1%) would significantly distort the compositional data analysis (CoDA), particularly for data points where Cu is a major component (e.g., 20%). Data were subsequently scaled with CLR (from scikit-bio) which is the standard pipeline with CoDA.
 
 <img width="1440" height="768" alt="RD_997_Mineralisation_types" src="https://github.com/user-attachments/assets/fb1b172e-c78c-456a-98aa-eb0c56f1dd93" />
 <figcaption><i>Figure 5: PCA biplot of Cu mineralisation types in the Red Dome 997 drill core. Only data points with Cu ≥ 1% were selected. Arsenic content is colour-coded (yellow = high As).</i></figcaption>
