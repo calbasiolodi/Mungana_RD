@@ -5,10 +5,10 @@ Geo-data science case study assessing Cu mineralisation at Mungana and Red Dome 
 The goal is to distinguish different types of Cu mineralisation, particularly ambiguous cases where high-penalty elements (e.g., As) coexist with discrete "clean" Cu minerals such as chalcopyrite (Figures 1 and 2). These cases are hard to identify by simple thresholding, so this project applies machine learning to flag potentially valuable mineralised zones. Data were collected with a Minalyzer™ at a 10 cm sampling interval on drill cores 845 and 883 (Mungana) and 187 and 997 (Red Dome).
 
 <img width="981" height="1122" alt="JCU_29094_Lehrmann_2012_thesis" src="https://github.com/user-attachments/assets/cc563e35-4746-4c5e-86cd-38ac5bd5b0bd" />
-<figcaption><i>Figure 1: Cu-bearing mineralisation at Mungana. The focus is on (c), which contains both pure chalcopyrite and tennantite (tn), a Cu sulpharsenide — evidence that clean chalcopyrite does occur in the Mungana deposit. From Lehrmann (2012).</i></figcaption>
+<figcaption><i>Figure 1: Cu-bearing mineralisation at Mungana. The focus is on (c), which contains both pure chalcopyrite and tennantite (tn), a Cu sulpharsenide evidencing that clean chalcopyrite does occur in the Mungana deposit. From Lehrmann (2012).</i></figcaption>
 
 <img width="1235" height="1412" alt="JCU_29094_Lehrmann_2012_thesis-RD_min_type" src="https://github.com/user-attachments/assets/bee9e508-5cde-4c30-95d9-66b42bed0bd1" />
-<figcaption><i>Figure 2: Cu-bearing mineralisation at Red Dome. The focus is on (c) and (d), which contain pure chalcopyrite, discrete arsenopyrite (apy, an Fe sulpharsenide), and tennantite (tn, a Cu sulpharsenide) — evidence that clean chalcopyrite also occurs at Red Dome. From Lehrmann (2012).</i></figcaption>
+<figcaption><i>Figure 2: Cu-bearing mineralisation at Red Dome. The focus is on (c) and (d), which contain pure chalcopyrite, discrete arsenopyrite (apy, an Fe sulpharsenide), and tennantite (tn, a Cu sulpharsenide) indicating that clean chalcopyrite also occurs at Red Dome. From Lehrmann (2012).</i></figcaption>
 
 ## 1. Limitations of a standard 4D plot
 
