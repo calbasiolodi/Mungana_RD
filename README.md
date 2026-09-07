@@ -1,4 +1,4 @@
-# Mungana_RD
+# Mungana_&_RD
 
 Geo-data science case study assessing Cu mineralisation at Mungana and Red Dome (Chillagoe, NE QLD) using public GSQ data.
 
