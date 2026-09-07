@@ -1,38 +1,44 @@
 # Mungana_RD
-Some data science specific case studies to assess the Cu mineralisation at Mungana and Red Dome (Chillagoe, NE QLD) with public GSQ data:
-The goal is to identify the different types of Cu mineralisation particularly in ambiguous cases where high penalty elements may be offset by discrete "clean" Cu minerals (i.e., chalcopyrite) in Figure 1 and 2. This kind of mineralisation might be hard to identify without machine learning, and here I present an example on how to apply machine learning to identify potentially valuable mineralised zones. The data were collected with Minalyzer(TM) and the chosen interval for this particular study is 10 cm, on drill cores 845, 883 (Mungana) and 187 and 997 Red Dome.
 
+Data science case studies assessing Cu mineralisation at Mungana and Red Dome (Chillagoe, NE QLD) using public GSQ data.
+
+The goal is to distinguish different types of Cu mineralisation, particularly ambiguous cases where high-penalty elements (e.g., As) coexist with discrete "clean" Cu minerals such as chalcopyrite (Figures 1 and 2). These cases are hard to identify by simple thresholding, so this project applies machine learning to flag potentially valuable mineralised zones. Data were collected with a Minalyzer™ at a 10 cm sampling interval on drill cores 845 and 883 (Mungana) and 187 and 997 (Red Dome).
 
 <img width="981" height="1122" alt="JCU_29094_Lehrmann_2012_thesis" src="https://github.com/user-attachments/assets/cc563e35-4746-4c5e-86cd-38ac5bd5b0bd" />
-<figcaption><i>Figure 1: the Cu-bearing mineralisation in Mungana, the focus in on c), that contains both pure chalcopyrite and tennantite (tn) whihc is a Cu sulpharsenide. Thus providing evidence that clean chalcopyrite can be actually found in Mungana deposit. From Lehrmann (2012)</i></figcaption>
+<figcaption><i>Figure 1: Cu-bearing mineralisation at Mungana. The focus is on (c), which contains both pure chalcopyrite and tennantite (tn), a Cu sulpharsenide — evidence that clean chalcopyrite does occur in the Mungana deposit. From Lehrmann (2012).</i></figcaption>
 
 <img width="1235" height="1412" alt="JCU_29094_Lehrmann_2012_thesis-RD_min_type" src="https://github.com/user-attachments/assets/bee9e508-5cde-4c30-95d9-66b42bed0bd1" />
-<figcaption><i>Figure 2: the Cu-bearing mineralisation in Red Dome, the focus in on c) and d). This mineralisaiton contains both pure chalcopyrite, discrete arsenopyrite (apy) that is Fe sulpharsenide, tennantite (tn) which is a Cu sulpharsenide. Thus providing evidence that clean chalcopyrite can be actually found in Mungana deposit. From Lehrmann (2012)</i></figcaption>
+<figcaption><i>Figure 2: Cu-bearing mineralisation at Red Dome. The focus is on (c) and (d), which contain pure chalcopyrite, discrete arsenopyrite (apy, an Fe sulpharsenide), and tennantite (tn, a Cu sulpharsenide) — evidence that clean chalcopyrite also occurs at Red Dome. From Lehrmann (2012).</i></figcaption>
 
-1. Here I present in  the limitations of a standard Plotly 4D plot to assess the Cu mineralisation types "Cu vs Fe" with S and As represented by size and shade respectively. Nonetheless it can quickly illustrate the presence of Cu mineralisations with As well below the standards safety limit (2000 ppm) and high risk Cu mineralisations (oxide with high As) and ambiguous cases (high-grade Cu, S and As) that won't necessarily cluster together.
+## 1. Limitations of a standard 4D plot
 
+A standard Plotly 4D plot ("Cu vs Fe", with S and As mapped to point size and shade) is used to assess Cu mineralisation types. While limited, it quickly highlights Cu mineralisation with As well below the safety threshold (2,000 ppm), high-risk oxide mineralisation with elevated As, and ambiguous cases (high-grade Cu, S, and As) that don't necessarily cluster together.
 
 <img width="1520" height="809" alt="As_low" src="https://github.com/user-attachments/assets/20b7a0d0-89a6-4200-bca0-7bee709ba18f" />
-<figcaption><i>Figure 1: Datapoints (10 cm interval scan) containing less than 2000 ppm in As.</i></figcaption>
+<figcaption><i>Figure 3: Data points (10 cm interval scans) containing less than 2,000 ppm As.</i></figcaption>
+
 <img width="1520" height="809" alt="As_high" src="https://github.com/user-attachments/assets/ab42100d-f899-4adb-b529-d15cb54eb3dd" />
-<figcaption><i>Figure 2: Datapoints (10 cm interval scan) containing more than 2000 ppm in As, thus might be unsafe to process.</i></figcaption>
+<figcaption><i>Figure 4: Data points (10 cm interval scans) containing more than 2,000 ppm As, and therefore potentially unsafe to process.</i></figcaption>
 
-2. The main focus is drill core Red Dome 997, since it has the highest grade of Cu. Thus, A PCA and PCA biplot (scikit-learn) is to be presented on the data points with Cu >= 1% (typical economic grade) to evaluate the type of Cu mineralisation (Figure 5).
+## 2. PCA on the highest-grade drill core
 
+The main focus is Red Dome drill core 997, which has the highest Cu grade. A PCA and PCA biplot (scikit-learn) were generated on data points with Cu ≥ 1% (a typical economic cutoff) to evaluate the type of Cu mineralisation present (Figure 5).
 
+## 3. Feature selection and CoDA considerations
 
-
-3. In the target dataset only the rows with Cu >=1 (or any other economically valuable grade) are chosen. This would avoid engineering additional rows with OneHotEncoder() or pandas.getdummies() that would introduce multicollinearity and overalap with the already present Cu_pct values. Removing Cu_pct values in favour of binarised dummies/encoders such as: 0 = (["Cu_pct"] <= 1) & 1 = (["Cu_pct"] >= 1), would distort CoDA significantly paritcualrly in datapoints where Cu is a main componens (e.g., 20%).
+Only rows with Cu ≥ 1% (or another chosen economic threshold) are retained in the target dataset. This avoids engineering additional features via `OneHotEncoder()` or `pandas.get_dummies()`, which would introduce multicollinearity and overlap with the existing `Cu_pct` values. Replacing `Cu_pct` with a binarised encoding (0 for Cu_pct < 1%, 1 for Cu_pct ≥ 1%) would significantly distort the compositional data analysis (CoDA), particularly for data points where Cu is a major component (e.g., 20%).
 
 <img width="1440" height="768" alt="RD_997_Mineralisation_types" src="https://github.com/user-attachments/assets/fb1b172e-c78c-456a-98aa-eb0c56f1dd93" />
-<figcaption><i>Figure 5: a PCA biplot wiht the different types of Cu mineralisations in Red Dome 997 drill core. Only datapoints with Cu >= 1% were selected. Arsenic content is color coded (yellow = high As)</i></figcaption>
+<figcaption><i>Figure 5: PCA biplot of Cu mineralisation types in the Red Dome 997 drill core. Only data points with Cu ≥ 1% were selected. Arsenic content is colour-coded (yellow = high As).</i></figcaption>
 
-4. There are also significant issues to raise with imputting below detection and not detected elements. Using MICE or LrEM by inserting the mean MDL without any tweak would introduce chemically impossible datapoints, whenthe MDL for a specific datapoint is missing, such as the instance of pure marble containing Fe contents in the order of miner (2 to 5%) that is not supported by imagery (no hue indicating Fe mineralisation).
+## 4. Handling below-detection and not-detected values
 
-5. The goal is not identify self-explanatory mienralisations (low As, High Cu, either ox. or sulph.), rather it is to identify and quantify the cluster that might contian discrete chalcopyrite (or any other pure Cu-bearing sulphide) despite high grade arsenic.
+Imputing below-detection and not-detected elements also raises issues. Using MICE or LrEM with an unadjusted mean MDL can produce chemically impossible data points — for example, a pure marble sample imputed with 2–5% Fe, which is not supported by imagery showing no Fe-associated hue.
 
-The PCA Biplot integrantedd with sklearn K-Means shows th eformation fo 4 differnt clusters of Cu mienralisations:
-Sulphide and Oxide mineralisations, that are subvided into As-poor and As-rich subtypes. 
+## 5. Cluster of interest
 
-The cluster of interest given (Fig. ) showing discrete sulphides is cluster 2, which contains high-As but extremely high-grade Cu in the sulphide form.
-Other As-poor clusters are more self-explanatory and can be identified in other drill cores of the same deposit more easily by setting Cu, S, and As threshold values.
+The goal is not to identify self-explanatory mineralisation (low As, high Cu, either oxide or sulphide), but to identify and quantify the cluster containing discrete chalcopyrite (or another pure Cu-bearing sulphide) despite high arsenic grade.
+
+Combining the PCA biplot with scikit-learn K-Means clustering identifies four clusters of Cu mineralisation: sulphide and oxide types, each split into As-poor and As-rich subtypes.
+
+The cluster of interest (Figure 5) is Cluster 2, which shows high-As but extremely high-grade Cu in sulphide form — i.e., discrete, "clean" sulphide mineralisation despite elevated arsenic. The remaining, As-poor clusters are more self-explanatory and can be identified more easily in other drill cores from the same deposit by setting Cu, S, and As threshold values.
