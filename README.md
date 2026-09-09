@@ -12,13 +12,13 @@ The goal is to distinguish different types of Cu mineralisation, particularly am
 
 ## 1. Limitations of a standard 4D plot
 
-A standard Plotly 4D plot ("Cu vs Fe", with S and As mapped to point size and shade) is used to assess Cu mineralisation types. While limited, it quickly highlights Cu mineralisation with As well below the safety threshold (2,000 ppm), high-risk oxide mineralisation with elevated As, and ambiguous cases (high-grade Cu, S, and As) that don't necessarily cluster together.
+A standard Plotly 4D plot ("Cu vs Fe", with S and As mapped to point size and shade) is used to assess Cu mineralisation types. While limited, it quickly highlights Cu mineralisation with As well below the safety threshold (2,000 ppm), the pyrite tie-line from Escolme et al. (2017), high-risk to process oxide mineralisation with elevated As, and ambiguous cases (high-grade Cu, S, and As) that do not necessarily cluster together.
 
 <img width="1520" height="809" alt="As_low" src="https://github.com/user-attachments/assets/20b7a0d0-89a6-4200-bca0-7bee709ba18f" />
-<figcaption><i>Figure 3: Data points (10 cm interval scans) containing less than 2,000 ppm As.</i></figcaption>
+<figcaption><i>Figure 3: Data points (10 cm interval scans) containing less than 2,000 ppm As. </i></figcaption>
 
 <img width="1520" height="809" alt="As_high" src="https://github.com/user-attachments/assets/ab42100d-f899-4adb-b529-d15cb54eb3dd" />
-<figcaption><i>Figure 4: Data points (10 cm interval scans) containing more than 2,000 ppm As, and therefore potentially unsafe to process.</i></figcaption>
+<figcaption><i>Figure 4: Data points (10 cm interval scans) containing more than 2,000 ppm As, and therefore potentially unsafe to process. Dashed line = Pyrite tie-line.</i></figcaption>
 
 ## 2. PCA on the highest-grade drill core
 
