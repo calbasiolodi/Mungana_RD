@@ -36,12 +36,12 @@ Only rows with Cu ≥ 1% (or another chosen economic threshold) are retained in 
 ## 4. Handling below-detection and not-detected values
 
 Imputing below-detection and not-detected elements also raises issues if performed without checking carefully. Using MICE or LrEM with a mean MDL from the entire drillcore can produce chemically impossible data points. For instance, a pure marble sample with ND Fe might be imputted with 2–5% Fe (the mean LOD of all XRF measurements in the overall drill core), which is not supported by imagery showing no Fe-associated hue.
-
+It may be a better option instead to cap a certain threshold the maximum value inserted by the imputter when in a specific row the respective MDL is absent.
 ## 5. Cluster of interest
 
-The goal is not to identify self-explanatory mineralisation (low As, high Cu, either oxide or sulphide) that can be selected with simple boolean rules, but to identify and quantify the sulphide-bearing cluster cluster containing discrete chalcopyrite (or another pure Cu-bearing sulphide) despite high arsenic grade in specific lithologies.
+The goal is not to identify self-explanatory mineralisations types (low As, high Cu, either oxide or sulphide) that can be selected with simple boolean rules, but to identify and quantify the sulphide-bearing cluster cluster containing discrete chalcopyrite (or another pure Cu-bearing sulphide) despite high arsenic grade in specific lithologies.
 
-Combining the PCA biplot with scikit-learn K-Means clustering identifies four clusters of Cu mineralisation: sulphide and oxide types, each split into As-poor and As-rich subtypes.
+Combining the PCA biplot with clustering (K-means will be added) identifies four clusters of Cu mineralisation: sulphide and oxide types, each split into As-poor and As-rich subtypes.
 
 The cluster of interest (Figure 5) is Cluster 2, which shows high-As but extremely high-grade Cu in sulphide form — i.e., discrete, "clean" sulphide mineralisation despite elevated arsenic. The remaining, As-poor clusters are more self-explanatory and can be identified more easily in other drill cores from the same deposit by setting Cu, S, and As threshold values.
 
