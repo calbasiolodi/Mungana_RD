@@ -50,4 +50,7 @@ The cluster of interest (Figure 5) is Cluster 2, which shows high-As but extreme
 
 A robust PCA did not yield significantly different results.
 
-## 6. IN DEV: SHAP and XGBoost on drillcores of the same deposit with training data from RD 187 drillcore
+## 6. XGBoost and SHAP(IN_DEV) on other drillcores of the same deposit with training data from RD 187 drillcore
+
+The tool chosen to classify the high-Cu and high-As clusters is XGBoost (eXtreme Gradient Boost) since it is relatively unaffected by different scales in data, and has already a significant record proving its effectivity in geochemistry machine learning studies (e.g., Yang et al., 2026). 
+XGBoost was trained on a dataset containing a small numbers of Minalyzer measurements (n=15) that contain the type of mienralisation to be identified on other drill cores (883, 845 and RD 197), in addition random datapoints with Cu_pct>=1 from the drillocore RD997 have been added in the training dataset to avoid single class training and data leakage (i.e., adding random entries from the test drill cores)
