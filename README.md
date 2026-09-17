@@ -35,7 +35,7 @@ Only rows with Cu ≥ 1% (or another chosen economic threshold) are retained in 
 
 ## 4. Handling below-detection and not-detected values
 
-Imputing below-detection and not-detected elements also raises issues if performed without checking carefully. Using MICE or LrEM with a mean MDL from the entire drillcore can produce chemically impossible data points. For instance, a pure marble sample with ND Fe might be imputted with 2–5% Fe (the mean LOD of all XRF measurements in the overall drill core), which is not supported by imagery showing no Fe-associated hue.
+Imputing below-detection and not-detected elements also raises issues if performed without checking carefully. Using MICE or LrEM with a mean MDL from the entire drillcore can produce chemically impossible data points. For instance, a pure marble sample with not detected (ND) Fe might be imputted with 2–5% Fe (the mean LOD of all XRF measurements in the overall drill core), which is not supported by imagery showing no Fe-associated hue.
 It may be a better option instead to cap a certain threshold the maximum value inserted by the imputter when in a specific row the respective MDL is absent.
 
 Another alternative explored sideways, but not in this published project would be using a bootstrap method for ND and BDL elements capped at an arbitrarily low percentage such as 0.05 % when the element is in percent or 0.1 when the element is in ppm. These small numbers would not distort significantly the compositional data that would be then be recalculated, and it is still a more geochemically acceptable practice to assume a very small value when the instrument did not detect a specific element.
@@ -46,7 +46,7 @@ The goal is not to identify self-explanatory mineralisations types (low As, high
 
 Combining the PCA biplot with clustering (K-means will be added) identifies four clusters of Cu mineralisation: sulphide and oxide types, each split into As-poor and As-rich subtypes.
 
-The cluster of interest (Figure 5) is Cluster 2, which shows high-As but extremely high-grade Cu in sulphide form — i.e., discrete, "clean" sulphide mineralisation despite elevated arsenic. The remaining, As-poor clusters are more self-explanatory and can be identified more easily in other drill cores from the same deposit by setting Cu, S, and As threshold values.
+The cluster of interest (Figure 5) is Cluster 2, which shows high-As but extremely high-grade Cu in sulphide form — i.e., discrete, "clean" sulphide mineralisation despite elevated arsenic. The remaining, As-poor clusters are more self-explanatory and can be identified more easily in the other drill cores from the same deposit (Mungana 845, 883 and RD 197) by setting in a script Cu, S, and As threshold values.
 
 A robust PCA did not yield significantly different results.
 
