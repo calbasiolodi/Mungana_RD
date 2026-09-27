@@ -33,7 +33,9 @@ Only rows with Cu ≥ 1% (or another chosen economic threshold) are retained in 
 
 <figcaption><i>Figure 5: PCA biplot of Cu mineralisation types in the Red Dome 997 drill core. Only data points with Cu ≥ 1% were selected. Arsenic content is colour-coded (yellow = high As). The oxides are associated with silica-bearing lithology (possibly garnets and micas, with less important calc-silicate component), while sulphides are associated with Ca-bearing lithologies (most likely marble and to a minor extent calc-silicates) </i></figcaption>
 
-[23_RED_DOME_997_T054_402.7.tif](https://github.com/user-attachments/files/32695000/23_RED_DOME_997_T054_402.7.tif)
+[23_RED_DOME_997_T054_402.7.tif](https://github.com/user-attachments/files/32695007/23_RED_DOME_997_T054_402.7.tif)
+
+
 <figcaption><i>Figure 6:Example of the mineralisation Cu sulphide with high arsenic from drill core RD 997 (tray 054, depth -402.7 m). The tan mineral is garnet or wollastonite, the golden yellow mineral is chalcopyrite, the tiny millimetric shiny specks might be arsenopyrite.</i></figcaption>
 
 
