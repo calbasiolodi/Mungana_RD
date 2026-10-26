@@ -57,13 +57,21 @@ The cluster of interest (Figure 5) is Cluster 2, which shows high-As but extreme
 
 A robust PCA did not yield significantly different results.
 
-## 6. XGBoost and SHAP(IN_DEV) on other drillcores of the same deposit with training data from RD 187 drillcore to identify calcium-bearing Cu mineralisation hosts
+## 6. XGBoost and SHAP on other drillcores of the same deposit with training data from RD 187 drillcore to identify calcium-bearing Cu mineralisation hosts
 
 The tool chosen to classify the high-Cu and high-As clusters is XGBoost (eXtreme Gradient Boost) since it is relatively unaffected by different scales in data, and has already a significant record proving its effectivity in geochemistry machine learning studies (e.g., Yang et al., 2026). 
-XGBoost was trained on a dataset containing a small numbers of Minalyzer measurements (n=15) that contain the type of mienralisation to be identified on other drill cores (883, 845 and RD 197), in addition random datapoints with Cu_pct>=1 from the drillocore RD997 to have a balanced training dataset, have been added in the training dataset to avoid single class training and data leakage (i.e., adding random entries from the test drill cores). The practical goal is not achieving the recongnition of each datapoint in the other drillcores, rather it is assessing whether it is present in a specific mineralised zone and at which depths. This is for practicality, since this meter scale resolution is sufficient since extraction would occur on the meter-scale not on a decimetric one. In addition, mineralised zones might contain two types of mineralisation in a sub-metric interval, rendering mixing of different mineralisation inevitable when the rock is loaded into excavators. The purpose is then idenifying the depth and whether a mineralised zone contains the "ambiguous" mineralisation type.
+XGBoost was trained on a dataset containing a small numbers of Minalyzer measurements (n=15) that contain the type of mineralisation to be identified on other drill cores (883, 845 and RD 197), in addition random datapoints with Cu_pct>=1 from the drillocore RD997 to have a balanced training dataset, have been added in the training dataset to avoid single class training and data leakage (i.e., adding random entries from the test drill cores). The practical goal is not achieving the recongnition of each datapoint in the other drillcores, rather it is assessing whether it is present in a specific mineralised zone and at which depths. This is for practicality, since this meter scale resolution is sufficient since extraction would occur on the meter-scale not on a decimetric one. In addition, mineralised zones might contain two types of mineralisation in a sub-metric interval, rendering mixing of different mineralisation inevitable when the rock is loaded into excavators. The purpose is then idenifying the depth and whether a mineralised zone contains the "ambiguous" mineralisation type.
 
 <img width="1659" height="947" alt="Cu_High_As_Sulph_DH" src="https://github.com/user-attachments/assets/36c62a3e-2ec8-497a-a9a1-6b8a500e98ca" />
 <figcaption><i>Figure 7: The identification of the Cu mineralisation with high As and high S in other drillcores. Notice that 845 contains none compatibly with extensive galena mienralisation unique to this drill core.</i></figcaption> 
 
 <img width="4500" height="3300" alt="downhole_stoichiometric_filter_all_drillcores" src="https://github.com/user-attachments/assets/a198841d-eeb9-45bd-9e51-c1981ffd35ac" />
 <figcaption><i>Figure 8: The oxide type Cu mineralisation with high As all drillcores.The occurrence of this kind of mineralisation adjacent to either low-As or High-As Cu suplhide bearing mineralisation (marked as 1 in Figure 5) constitute a processing risk, since the exctractable rock will contain several mineralisaiton types including high-As oxide and arsenides ones. 
+
+
+### 7. SHAP of XGBoost on RD 997 Cu sulphide mineralisation
+
+The mineralisation with high As and chalcopyrite is commonly associated with molybdnenum and iron. In the drill core iron is in part within magnetite (Fe3O4) while it is not clear if this magnetite might contain arsnenic as well.
+
+<img width="4130" height="2123" alt="RD_997_SHAP_beeswarm_no_Cu_As" src="https://github.com/user-attachments/assets/6760d8b6-fbe4-4d8a-bcd9-ade573f99d5e" />
+<figcaption><i>Figure 9: SHAP (beeswarm) showing which variables contribute to whether a mineralisation (or rather a XRF assay) is classified belonging to this particular type. 
