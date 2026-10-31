@@ -159,6 +159,9 @@ The inputs are rendered images. Magnetic RGB values are map colours, and gravity
 
 Recorded software versions: rasterio 1.5.2, scikit-learn 1.9.0 and NumPy 2.4.6.
 
+## Interpretation
+The PC suggest that hydrothermal units in the map are represented by PC 1 and 2 (Figure N). The Cu mineralisation sits clearly at the boundary of skarn to marble.
+
 ## Using this report on GitHub
 
 Edit this `README.md` as ordinary Markdown. Upload it together with the accompanying `figures/` and `data/` folders, retaining their relative locations. All image and download links use repository-relative paths; no external image hosting is required.
