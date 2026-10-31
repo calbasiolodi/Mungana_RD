@@ -3,14 +3,17 @@ import matplotlib.pyplot as plt
 import mpl_axes_aligner
 from sklearn.decomposition import PCA
 
+#insert any path here
 source_path: str = r"C:\Users...\RD_997_clr_transformed_only_elements.csv"
 
 df = pd.read_csv(source_path)
-
+#here we copy the dataframe
 df_cp = df.copy()
 
+#removing string and numeric metadata that would distort the PCA otherwise
 df_cp.drop(columns=['Tray_name','From_m', 'To_m'], inplace=True)
 
+#the dataset 
 X = df_cp.iloc[:, :-1].values          
 feature_names = df_cp.columns[:-1]    
 
