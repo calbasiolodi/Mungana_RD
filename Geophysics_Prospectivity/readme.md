@@ -36,7 +36,7 @@ Long horizontal and vertical lines were detected through their image-wide darken
 | Grid-obscured pixels and conservative margin | 17,528 | Excluded from PCA; estimated only for display |
 | Total shared display footprint | 201,492 | Observed pixels plus display estimates |
 
-![Original gravity image, grid-removed display and grid exclusion mask](figures/Gravity_grid_removal_check.png)
+![Original gravity image, grid-removed display and grid exclusion mask](pictures/Gravity_grid_removal_check.png)
 
 Linear interpolation across the narrow grid bands creates a continuous **display copy only**. The original values hidden beneath printed grid lines cannot be recovered exactly from this image. Interpolated values do not contribute to model fitting, loadings or explained variance.
 
@@ -121,7 +121,7 @@ Correlation loadings equal covariance loadings divided by each input channel's s
 | Magnetic blue | -0.660851 | +0.728812 | -0.022688 | +0.177748 |
 | Gravity 1VD grayscale | -0.238743 | -0.142648 | +0.955541 | +0.097951 |
 
-![Input-channel correlations with each principal component](figures/Mag_Gravity_loading_correlations.png)
+![Input-channel correlations with each principal component](pictures/Mag_Gravity_loading_correlations.png)
 
 [Download correlations as CSV](data/Mag_Gravity_correlations.csv).
 
