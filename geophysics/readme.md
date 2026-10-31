@@ -10,7 +10,7 @@ The first two PCs explain **81.05%** of the input image variance; the first thre
 
 This report covers the full-area maps and model fitted to the shared footprint.
 
-![Full-area magnetic and gravity PCA component maps](Mag_Gravity_all_PC_maps.png)
+![Full-area magnetic and gravity PCA component maps](pictures/Mag_Gravity_all_PC_maps.png)
 
 ## Input data and spatial alignment
 
