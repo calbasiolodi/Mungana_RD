@@ -76,7 +76,7 @@ Rows of the coefficient matrix are input channels; columns are PCs.
 | PC3 | 3776.792289 | 10.301799 | 91.354009 |
 | PC4 | 3169.748539 | 8.645991 | 100.000000 |
 
-![Scree plot showing individual and cumulative explained variance](figures/Mag_Gravity_scree.png)
+![Scree plot showing individual and cumulative explained variance](pictures/Mag_Gravity_scree.png)
 
 [Download explained variance as CSV](data/Mag_Gravity_explained_variance.csv).
 
@@ -133,10 +133,10 @@ Observed-score GeoTIFFs retain unscaled float32 scores, with **NoData = -9999** 
 
 | Component | Full-area PNG map | Observed-score GeoTIFF |
 |---|---|---|
-| PC1 | [Map](figures/Mag_Gravity_PC1_map.png) | [GeoTIFF](data/Mag_Gravity_PC1.tif) |
-| PC2 | [Map](figures/Mag_Gravity_PC2_map.png) | [GeoTIFF](data/Mag_Gravity_PC2.tif) |
-| PC3 | [Map](figures/Mag_Gravity_PC3_map.png) | [GeoTIFF](data/Mag_Gravity_PC3.tif) |
-| PC4 | [Map](figures/Mag_Gravity_PC4_map.png) | [GeoTIFF](data/Mag_Gravity_PC4.tif) |
+| PC1 | [Map](pictures/Mag_Gravity_PC1_map.png) | [GeoTIFF](data/Mag_Gravity_PC1.tif) |
+| PC2 | [Map](pictures/Mag_Gravity_PC2_map.png) | [GeoTIFF](data/Mag_Gravity_PC2.tif) |
+| PC3 | [Map](pictures/Mag_Gravity_PC3_map.png) | [GeoTIFF](data/Mag_Gravity_PC3.tif) |
+| PC4 | [Map](pictures/Mag_Gravity_PC4_map.png) | [GeoTIFF](data/Mag_Gravity_PC4.tif) |
 
 ## Data products
 
@@ -161,6 +161,10 @@ Recorded software versions: rasterio 1.5.2, scikit-learn 1.9.0 and NumPy 2.4.6.
 
 ## Interpretation
 The PC suggest that hydrothermal units in the map are represented by PC 1 and 2 (Figure N). The Cu mineralisation sits clearly at the boundary of skarn to marble.
+
+### Important: mining activity effect on magnetomery
+The mining activity removed the sedimentary breccia cover, that acts as a sort of dampener, thus the PCA is inevitably affected by the mining activity that alters the natural magnetometry patters of undisturbed rock, regolith and sedimentary cover. It is thus needed to differentiate the PCs that are not affected by the minign activity to train a model for prosepctivity on the test dataset (known drill core locations), as the geomagnetic signature of the human mining activity would be picked up, thus identify proven prospects on human-made features rather than originating from natural properties of the mineralisation and the host rocks.
+[From GSQ report page 262]<img width="869" height="418" alt="Pre_post_mining_mag" src="https://github.com/user-attachments/assets/9a8b485f-0ae7-443b-aa41-1ad03adbc6a9" />
 
 ## Using this report on GitHub
 
