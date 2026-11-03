@@ -38,7 +38,7 @@ Long horizontal and vertical lines in the gravimetric map were removed. The grid
 
 ![Original gravity image, grid-removed display and grid exclusion mask](pictures/Gravity_grid_removal_check.png)
 
-Linear interpolation across the narrow grid bands creates a continuous **display copy only**. The original values hidden beneath printed grid lines cannot be recovered exactly from this image. Interpolated values do not contribute to model fitting, loadings or explained variance.
+Linear interpolation across the narrow grid bands creates **display copy only** that is only for functionality and aesthetics. The original values hidden beneath the grid could not be recovered. Thus, the interpolated values are excluded from the model fitting, loadings or explained variance.
 
 The [quality mask](data/Mag_Gravity_quality_mask.tif) records:
 
