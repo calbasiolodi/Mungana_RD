@@ -2,7 +2,7 @@
 
 ## Overview
 
-This analysis combines the magnetic TMI RGB image with the Red Dome gravity first vertical derivative (1VD) grayscale image over their shared survey footprint. Radiometry is excluded.
+This analysis combines the magnetic TMI RGB image with the Red Dome gravity first vertical derivative (1VD) grayscale image over their shared survey footprint. Radiometry is excluded in this run, and will be given attention in a separate (in DEV) subsection.
 
 The gravity image contains eight horizontal and nine vertical cartographic grid lines. Grid-obscured pixels and a conservative margin were excluded before fitting the PCA. The model uses **183,964 observed shared pixels** and four variables: magnetic red, green and blue, plus one gravity grayscale channel. The gravity image's RGB channels are identical, so they are included once.
 
@@ -28,7 +28,7 @@ The native gravity image has a fully opaque alpha channel. Its white background 
 
 ## Gravity grid removal
 
-Long horizontal and vertical lines were detected through their image-wide darkening, and their approximately 2 km periodic spacing was checked. Detected rows and columns were expanded by one native pixel to cover antialiased edges.
+Long horizontal and vertical lines in the gravimetric map were removed. The gridlines have an approximately 2 km periodic spacing. Detected rows and columns by the algorithm were expanded by one native pixel to cover antialiased edges.
 
 | Pixel category within the shared footprint | Count | Use |
 |---|---:|---|
