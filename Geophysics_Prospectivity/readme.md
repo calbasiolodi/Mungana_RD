@@ -6,7 +6,7 @@ This analysis combines the magnetic TMI RGB image with the Red Dome gravity firs
 
 The gravity image contains eight horizontal and nine vertical cartographic grid lines. Grid-obscured pixels and a conservative margin were excluded before fitting the PCA. The model uses **183,964 observed shared pixels** and four variables: magnetic red, green and blue, plus one gravity grayscale channel. The gravity image's RGB channels are identical, so they are included once.
 
-The first two PCs explain **81.05%** of the input image variance; the first three explain **91.35%**. PC3 has the strongest correlation with gravity grayscale (**+0.955541**). These are statistical relationships between rendered image channels, not evidence of particular geological causes.
+The first two PCs explain **81.05%** of the input image variance; the first three explain **91.35%**. PC3 has the strongest correlation with gravity grayscale (first vertical derivative) (**+0.955541**). These are statistical relationships between rendered image channels, not evidence of particular geological causes.
 
 This report covers the full-area maps and model fitted to the shared footprint.
 
