@@ -8,4 +8,4 @@ PC1 shows mostly the punctual sources of Th and U, and in particular is associat
 
 PC2 is mostly either the felsic igneous rocks, given it scores the highest where elevation is the highest it is considered as the effect of K40-bearing igneous/metamorphic rocks, thus it is interpreted as the signal of felsics (granites/rhyolites).
 
-<img src="pictures/Red_Dome_Area_Geology.tif" width="800" alt="Alt Text">
+<img src="pictures/Red_Dome_Area_Geology.png" width="800" alt="Alt Text">
