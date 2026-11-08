@@ -4,4 +4,7 @@ The radiometrics map might help to identify which lithological units have a spec
 
 <img src="pictures/Red_Dome_Radiometrics_DEM_PCA_Maps.png" width="800" alt="Alt Text">
 
-PC1 shows mostly the sources of Th and U. PC2 is mostly controlled by topography and K, given it scores the highest where elevation is the highest it is considered as the effect of K40-bearing igneous/metamorphic rocks, thus it is interpreted as the signal of felsics (granites/rhyolites).
+PC1 shows mostly the punctual sources of Th and U, and in particular is associated with the proterozoic metamophics as the PC1 increases strongly south of the Palmerville Fault.
+
+PC2 is mostly either the felsic igneous rocks, given it scores the highest where elevation is the highest it is considered as the effect of K40-bearing igneous/metamorphic rocks, thus it is interpreted as the signal of felsics (granites/rhyolites).
+[Red Dome Area Geology.tif](https://github.com/user-attachments/files/34538563/Red.Dome.Area.Geology.tif)
