@@ -1,10 +1,10 @@
-# Magnetic and gravity PCA: full-area maps
+# Magnetic and gravity PCA: full-area maps (Mungana/Red Dome)
 
 ## Overview
 
-This analysis combines the magnetic TMI RGB image with the Red Dome gravity first vertical derivative (1VD) grayscale image over their shared survey footprint. Radiometry is excluded in this run, and will be given attention in a separate (in DEV) subsection.
+This analysis combines the magnetic TMI RGB image with the Red Dome gravity first vertical derivative (1VD) grayscale image over their shared survey footprint. Radiometry is excluded in this run, and will be given attention in a separate subsection. The rationale is that radiometrics is also controlled significantly by surface and shallow features (K-bearing sediments).
 
-The gravity image contains eight horizontal and nine vertical cartographic grid lines. Grid-obscured pixels and a conservative margin were excluded before fitting the PCA. The model uses **183,964 observed shared pixels** and four variables: magnetic red, green and blue, plus one gravity grayscale channel. The gravity image's RGB channels are identical, so they are included once.
+The gravity image contains eight horizontal and nine vertical cartographic grid lines. Grid-obscured pixels and a conservative margin were excluded before fitting the PCA to avoid feeding the model with non-pertinent data. The model uses **183,964 observed shared pixels** and four variables: magnetic red, green and blue, plus one gravity grayscale channel. The gravity image's RGB channels are identical, so they are included once.
 
 The first two PCs explain **81.05%** of the input image variance; the first three explain **91.35%**. PC3 has the strongest correlation with gravity grayscale (first vertical derivative) (**+0.955541**). These are statistical relationships between rendered image channels, not evidence of particular geological causes.
 
