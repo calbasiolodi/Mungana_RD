@@ -28,7 +28,7 @@ The native gravity image has a fully opaque alpha channel. Its white background 
 
 ## Gravity grid removal
 
-Long horizontal and vertical lines in the gravimetric map were removed. The gridlines have an approximately 2 km periodic spacing. Detected rows and columns by the algorithm were expanded by one native pixel to cover antialiased edges.
+Since a "clean" 1VD gravimetry map of the area could not be retrieved, long horizontal and vertical lines in the gravimetric map were removed. The gridlines have an approximately 2 km periodic spacing. Detected rows and columns by the algorithm were expanded by one native pixel to cover antialiased edges.
 
 | Pixel category within the shared footprint | Count | Use |
 |---|---:|---|
@@ -90,9 +90,9 @@ These are the weights used to calculate PC scores, corresponding to scikit-learn
 
 | Input channel | PC1 | PC2 | PC3 | PC4 |
 |---|---:|---:|---:|---:|
-| Magnetic red | +0.795016 | +0.372637 | +0.069949 | +0.473496 |
-| Magnetic green | -0.207297 | -0.542511 | -0.158688 | +0.798453 |
-| Magnetic blue | -0.558649 | +0.748355 | -0.041534 | +0.355179 |
+| Magnetic red channel | +0.795016 | +0.372637 | +0.069949 | +0.473496 |
+| Magnetic green channel | -0.207297 | -0.542511 | -0.158688 | +0.798453 |
+| Magnetic blue channel | -0.558649 | +0.748355 | -0.041534 | +0.355179 |
 | Gravity 1VD grayscale | -0.113529 | -0.082394 | +0.983972 | +0.110101 |
 
 [Download coefficients as CSV](data/Mag_Gravity_coefficients.csv).
