@@ -155,12 +155,12 @@ Observed-score GeoTIFFs retain unscaled float32 scores, with **NoData = -9999** 
 
 Validation checked the independently calculated covariance eigenvalues, PC orthogonality, diagonal score covariance, inverse reconstruction, saved individual scores and masks. All retained observed gravity values are unchanged. Maximum inverse reconstruction error from the four float32 PCs was **0.000010114 image units**.
 
-The inputs are rendered images. Magnetic RGB values are map colours, and gravity grayscale is an image encoding of a 1VD map. These results describe image variation; they do not recover magnetic or gravity measurements in physical units. White-background detection and interpolated grid displays are assumptions made from the available images. Geological interpretation requires comparison with original geophysical data and independent geological evidence.
+The inputs are rendered images from GSQ. Magnetic RGB values are map colours (blue = lower nT magnetic field, red = higher magnetic field), and gravity grayscale is an image encoding of a 1VD map. These results describe image variation and the PC; they do not either show or recover magnetic or gravity measurements in physical units. White-background detection and interpolated grid displays are assumptions made from the available images. Geological interpretation requires comparison with original geophysical data and independent geological evidence, such comparison with geological maps and aerial images.
 
 Recorded software versions: rasterio 1.5.2, scikit-learn 1.9.0 and NumPy 2.4.6.
 
 ## Interpretation
-The PC suggest that hydrothermal units in the map are represented by PC 1 and 2 (Figure N). The Cu mineralisation sits clearly at the boundary of skarn to marble.
+The PC suggest that hydrothermal units in the map are represented by PC 1 and 2 (Figure N). The Cu mineralisation sits clearly at the boundary of skarn to marble as it was observed in actual drillcores.
 
 ### Important: mining activity effect on magnetomery
 The mining activity removed the sedimentary breccia cover, that acts as a sort of dampener, thus the PCA is inevitably affected by the mining activity that alters the natural magnetometry patters of undisturbed rock, regolith and sedimentary cover. It is thus needed to differentiate the PCs that are not affected by the minign activity to train a model for prosepctivity on the test dataset (known drill core locations), as the geomagnetic signature of the human mining activity would be picked up, thus identify proven prospects on human-made features rather than originating from natural properties of the mineralisation and the host rocks.
