@@ -72,7 +72,7 @@ XGBoost was trained on a dataset containing a small numbers of Minalyzer measure
 <figcaption><i>Figure 7: The identification of the Cu mineralisation with high As and high S in other drillcores. Notice that 845 contains none compatibly with extensive galena mienralisation unique to this drill core.</i></figcaption> 
 
 <img width="4500" height="3300" alt="downhole_stoichiometric_filter_all_drillcores" src="https://github.com/user-attachments/assets/a198841d-eeb9-45bd-9e51-c1981ffd35ac" />
-<figcaption><i>Figure 8: The oxide type Cu mineralisation with high As all drillcores.The occurrence of this kind of mineralisation adjacent to either low-As or High-As Cu suplhide bearing mineralisation (marked as 1 in Figure 5) constitute a processing risk, since the exctractable rock will contain several mineralisaiton types including high-As oxide and arsenides ones. 
+<figcaption><i>Figure 8: The oxide type Cu mineralisation with high As all drillcores.The occurrence of this kind of mineralisation adjacent to either low-As or High-As Cu suplhide bearing mineralisation (marked as 1 in Figure 5) constitute a processing risk, since the exctractable rock will contain several mineralisaiton types including high-As oxide and arsenides ones.</i></figcaption> 
 
 
 ### 7. SHAP of XGBoost on RD 997 Cu sulphide mineralisation
@@ -81,3 +81,9 @@ The mineralisation with high As and chalcopyrite is commonly associated with mol
 
 <img width="4130" height="2123" alt="RD_997_SHAP_beeswarm_no_Cu_As" src="https://github.com/user-attachments/assets/6760d8b6-fbe4-4d8a-bcd9-ade573f99d5e" />
 <figcaption><i>Figure 9: SHAP (beeswarm) showing which variables contribute to whether a mineralisation (or rather a XRF assay) is classified belonging to this particular type. 
+
+
+## 8. Main takes
+The mineralisation at Mungana represents a challenging mineralisation to process given the high arsenic mienralisation, that contains high-grade Cu (>10 %).
+The main issue rather than the occurrence of high-As Cu-sulphide mineralisation is the close proximity < 1m along the drillhole of either high-As mineralisaiton (Fig. 7) and As-poor Cu mineralisation. This would require subsequent sorting if at the digging phase both kind of mienralisations are inadvetently mixed as the excavator heads are usually larger in width than 1 m.
+Additional, attention should be given of the acid generating potential of the sulphide mienralisations despite being hosted in part by calcium carbonate (marble), and the metal leaching potential of the oxide mineralisation types. Sb contents are not tracked in the data and would also needed particular attention in further case studies.
